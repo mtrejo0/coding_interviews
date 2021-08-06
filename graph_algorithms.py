@@ -50,15 +50,16 @@ def find_shortest_path2(graph, start, end):
             if next not in dist:
                 dist[next] = dist[at] + [next]
                 q.append(next)
-    return dist.get(end)
+                
+    return dist[end]
 
 
 if __name__ == "__main__":
 
-    graph = {'a':['b','c','d'],'b':['f'],'c':'e', 'd':[], 'e':['f'], 'f': []}
+    graph = {'a':['b','c','d'],'b':['f'],'c':'e', 'd':[], 'e':['f'], 'f': ['g'],'g':['b']}
 
     start = 'a'
-    end = 'f'
+    end = 'g'
     path = find_path(graph, start, end)
     print(path)
 
